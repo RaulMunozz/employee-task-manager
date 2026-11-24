@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+      # The project's CommandLineRunner reads stdin during @SpringBootTest.
+      # forkCount=0 lets the test JVM inherit the piped input so the menu exits.
+      - name: Run tests
+        run: printf '0\n' | bash ./mvnw -B test -DforkCount=0
