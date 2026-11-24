@@ -1,8 +1,0 @@
-3510717 Complete Spring Boot application with full IoC implementation
-6dfffd6 Configure application properties and H2 database
-47d76e6 Develop CommandLineRunner for user interface
-0681eb8 Build facade component with Spring IoC
-d38cd88 Create service layer with dependency injection
-dc90733 Implement Spring Data JPA repositories
-895e5d1 Add JPA entities with Spring annotations
-a7be04a Initialize Spring Boot project structure
